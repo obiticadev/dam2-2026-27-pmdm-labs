@@ -1,0 +1,32 @@
+# Android Studio e IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# Gradle y salidas Android. Se conserva gradle/wrapper/.
+**/.gradle/
+**/build/
+**/out/
+local.properties
+**/captures/
+**/.externalNativeBuild/
+**/.cxx/
+*.apk
+*.aab
+
+# Claves y secretos
+*.jks
+*.keystore
+.env
+.env.*
+!.env.example
+credentials.*
+secrets.*
+
+# Temporales
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
