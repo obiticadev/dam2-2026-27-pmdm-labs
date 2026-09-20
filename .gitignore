@@ -1,28 +1,57 @@
 # Android Studio e IDE
 .idea/
-.vscode/
 *.iml
 *.iws
 
+# VS Code: solo configuracion compartible conocida
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 # Gradle y salidas Android. Se conserva gradle/wrapper/.
 **/.gradle/
+**/.kotlin/
 **/build/
 **/out/
+*.class
 local.properties
 **/captures/
 **/.externalNativeBuild/
 **/.cxx/
 *.apk
 *.aab
+*.apks
+*.idsig
+**/output-metadata.json
+*.hprof
+hs_err_pid*
+replay_pid*
 
 # Claves y secretos
 *.jks
 *.keystore
+*.p12
+*.pfx
+*.key
+*-private.pem
+keystore.properties
+signing.properties
 .env
 .env.*
 !.env.example
+!.env.sample
+!.env.template
+!.env.*.example
 credentials.*
 secrets.*
+!credentials.example
+!credentials.example.*
+!credentials.*.example
+!secrets.example
+!secrets.example.*
+!secrets.*.example
 
 # Temporales
 *.log
@@ -30,3 +59,6 @@ secrets.*
 *.bak
 .DS_Store
 Thumbs.db
+
+# Wrapper, dependencias y entregas JAR deliberadas si se conservan.
+!**/*.jar
