@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,5 +32,21 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
+        Button btnChangeActivity = findViewById(R.id.button2);
+
+        btnChangeActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, saludo.class);
+                TextView txt = findViewById(R.id.user1234);
+                String content = txt.getText().toString();
+                intent.putExtra("nombre", content);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
