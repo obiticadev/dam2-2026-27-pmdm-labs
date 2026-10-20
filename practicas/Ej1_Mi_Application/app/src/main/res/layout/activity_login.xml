@@ -5,10 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
+    <!-- Sección: Mensaje de bienvenida -->
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/layoutBienvenido"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -19,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tvBienvenido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
@@ -29,19 +30,20 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Sección: Título cuenta personal -->
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/layoutTituloCuenta"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/layoutBienvenido"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/tvTituloCuenta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -52,96 +54,101 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Sección: Campo Usuario -->
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/layoutUser"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingVertical="12dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTituloCuenta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvLabelUser"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:text="USER" />
 
         <EditText
-            android:id="@+id/user1234"
+            android:id="@+id/etUser"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress" />
     </LinearLayout>
 
+    <!-- Sección: Campo Password -->
     <LinearLayout
-        android:id="@+id/linearLayout5"
+        android:id="@+id/layoutPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingVertical="12dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/layoutUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvLabelPassword"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:text="PASSWORD" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/etPassword"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword" />
     </LinearLayout>
 
+    <!-- Sección: Botón Login -->
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/layoutLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingVertical="16dp"
         android:gravity="center"
         android:orientation="vertical"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnLogin"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="LOGIN" />
     </LinearLayout>
 
+    <!-- Sección: Enlaces inferiores (Olvidó contraseña / Registrarse) -->
     <LinearLayout
-        android:id="@+id/linearLayout7"
+        android:id="@+id/layoutFooterOpciones"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingVertical="16dp"
         android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/layoutLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/layoutColOlvidoPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tvOlvidoPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="8dp"
@@ -150,13 +157,14 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutColRegistrarse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tvRegistrarse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"

@@ -1,7 +1,5 @@
 package com.example.mi_application;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class saludo extends AppCompatActivity {
+public class SaludoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,31 +22,25 @@ public class saludo extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-
-
-
-        Intent intent = this.getIntent();
-        String mensaje = intent.getStringExtra("nombre");
-
-        TextView miTextView = findViewById(R.id.salida);
-
-        miTextView.setText(mensaje);
-
-        Button btnChangeActivity2 = findViewById(R.id.regresar);
-
-        btnChangeActivity2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(saludo.this, MainActivity.class);
-                startActivity(intent1);
-            }
+            return insets;
         });
 
+        // Enlazamos con los nuevos IDs
+        TextView tvMensajeSaludo = findViewById(R.id.tvMensajeSaludo);
+        Button btnVolver = findViewById(R.id.btnVolver);
 
-        return insets;
+        Intent intent = getIntent();
+        String mensaje = intent.getStringExtra("nombre");
+        tvMensajeSaludo.setText(mensaje);
 
-
-
+        // Botón para volver a LoginActivity
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: Tu lógica al pulsar volver
+                Intent intent1 = new Intent(SaludoActivity.this, LoginActivity.class);
+                startActivity(intent1);
+            }
         });
     }
 }
