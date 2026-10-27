@@ -15,6 +15,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private String user_registrado;
+    private String pass_registrado;
+    private String direccion_registrado;
+    private String telefono_registrado;
+    private String cp_registrado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +38,17 @@ public class LoginActivity extends AppCompatActivity {
         Button btnLogin = findViewById(R.id.btnLogin);
         TextView tvRegistrarse = findViewById(R.id.tvRegistrarse);
 
-        // TODO: Aquí puedes recoger los datos enviados desde RegisterActivity con getIntent()
+        // Recoger los datos enviados desde RegisterActivity con getIntent()
+        Intent intent2 = getIntent();
+        if (intent2 != null && intent2.hasExtra("user_registrado")) {
+            user_registrado = intent2.getStringExtra("user_registrado");
+            etUser.setText(user_registrado);
+
+            pass_registrado = intent2.getStringExtra("pass_registrado");
+            direccion_registrado = intent2.getStringExtra("direccion_registrado");
+            telefono_registrado = intent2.getStringExtra("telefono_registrado");
+            cp_registrado = intent2.getStringExtra("cp_registrado");
+        }
 
         // Navegación a la pantalla de Registro
         tvRegistrarse.setOnClickListener(new View.OnClickListener() {
@@ -47,11 +63,24 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Aquí escribe tu lógica de verificación (comparar etUser y etPassword)
-
                 Intent intent = new Intent(LoginActivity.this, SaludoActivity.class);
+
                 String content = etUser.getText().toString();
+                String content_pass = etPassword.getText().toString();
+
                 intent.putExtra("nombre", content);
+                intent.putExtra("pass_registrado", content_pass);
+
+                if (intent2 != null && intent2.hasExtra("direccion_registrado")) {
+                    intent.putExtra("direccion_registrado", direccion_registrado);
+                }
+                if (intent2 != null && intent2.hasExtra("telefono_registrado")) {
+                    intent.putExtra("telefono_registrado", telefono_registrado);
+                }
+                if (intent2 != null && intent2.hasExtra("cp_registrado")) {
+                    intent.putExtra("cp_registrado", cp_registrado);
+                }
+
                 startActivity(intent);
             }
         });

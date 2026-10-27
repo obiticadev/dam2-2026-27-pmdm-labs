@@ -3,7 +3,9 @@ package com.example.mi_application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -30,9 +32,11 @@ public class SaludoActivity extends AppCompatActivity {
         Button btnVolver = findViewById(R.id.btnVolver);
 
         Intent intent = getIntent();
-        String mensaje = intent.getStringExtra("nombre");
-        tvMensajeSaludo.setText(mensaje);
 
+        ListView view = findViewById(R.id.lista);
+        String[] valores = {intent.getStringExtra("nombre"), intent.getStringExtra("pass_registrado"), intent.getStringExtra("direccion_registrado"), intent.getStringExtra("telefono_registrado"), intent.getStringExtra("cp_registrado")};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, valores);
+        view.setAdapter(adapter);
         // Botón para volver a LoginActivity
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
