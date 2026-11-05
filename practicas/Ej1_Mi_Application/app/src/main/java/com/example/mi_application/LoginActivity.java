@@ -71,17 +71,19 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("nombre", content);
                 intent.putExtra("pass_registrado", content_pass);
 
-                if (intent2 != null && intent2.hasExtra("direccion_registrado")) {
+                if (intent2.hasExtra("direccion_registrado")) {
                     intent.putExtra("direccion_registrado", direccion_registrado);
                 }
-                if (intent2 != null && intent2.hasExtra("telefono_registrado")) {
+                if (intent2.hasExtra("telefono_registrado")) {
                     intent.putExtra("telefono_registrado", telefono_registrado);
                 }
-                if (intent2 != null && intent2.hasExtra("cp_registrado")) {
+                if (intent2.hasExtra("cp_registrado")) {
                     intent.putExtra("cp_registrado", cp_registrado);
                 }
 
                 startActivity(intent);
+
+
             }
         });
     }

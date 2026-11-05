@@ -34,10 +34,27 @@ public class SaludoActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         ListView view = findViewById(R.id.lista);
-        String[] valores = {intent.getStringExtra("nombre"), intent.getStringExtra("pass_registrado"), intent.getStringExtra("direccion_registrado"), intent.getStringExtra("telefono_registrado"), intent.getStringExtra("cp_registrado")};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, valores);
+        String nombre = intent.getStringExtra("nombre");
+        String pass = intent.getStringExtra("pass_registrado");
+        String direccion = intent.getStringExtra("direccion_registrado");
+        String telefono = intent.getStringExtra("telefono_registrado");
+        String cp = intent.getStringExtra("cp_registrado");
+        String[] valores = {
+            "Usuario: " + (nombre != null ? nombre : "No indicado"),
+            "Contraseña: " + (pass != null ? pass : "No indicado"),
+            "Direccion: " + (direccion != null ? direccion : "No indicado"),
+            "Teléfono: " + (telefono != null ? telefono : "No indicado"),
+            "CP: " + (cp != null ? cp : "No indicado")};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            this,
+            android.R.layout.simple_list_item_1,
+            valores);
         view.setAdapter(adapter);
         // Botón para volver a LoginActivity
+
+
+
+
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,5 +63,8 @@ public class SaludoActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+
+
+
     }
 }
