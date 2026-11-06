@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="20dp"
+    android:id="@+id/main"
+    >
+
+    <!-- 1. BOTÓN ATRÁS: Esquina superior izquierda -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Atrás" />
+
+    <!-- 2. IMAGEN DE PERFIL: Esquina superior derecha -->
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="#CCCCCC"
+        android:contentDescription="Perfil" />
+
+    <!-- 3. TÍTULO: Centrado y acotado entre los botones superiores para evitar solapamiento -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btn_back"
+        android:layout_alignBottom="@id/btn_back"
+        android:layout_toEndOf="@id/btn_back"
+        android:layout_toStartOf="@id/iv_profile"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="Panel de Control"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- 4. BUSCADOR: Debajo de los elementos superiores -->
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_back"
+        android:layout_marginTop="16dp"
+        android:hint="Buscar elementos..."
+        android:inputType="text" />
+
+    <!-- 5. ETIQUETA DE SECCIÓN -->
+    <TextView
+        android:id="@+id/tv_section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/et_search"
+        android:layout_below="@id/et_search"
+        android:layout_marginTop="16dp"
+        android:text="Estado del Sistema"
+        android:textColor="#666666"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- 6. SWITCH: A la derecha de la etiqueta -->
+    <Switch
+        android:id="@+id/switch_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_section_label"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <!-- 8. BOTÓN CANCELAR: Anclado abajo a la izquierda -->
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="Cancelar" />
+
+    <!-- 9. BOTÓN GUARDAR: Anclado abajo a la derecha -->
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/btn_cancel"
+        android:text="Siguiente pantalla" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="357dp"
+        android:layout_height="182dp"
+        android:layout_below="@+id/tv_section_label"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="36dp">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button5"
+            android:layout_marginStart="10dp"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/button5"
+            android:layout_toEndOf="@+id/button5"
+            android:text="Buttom" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/milista"
+        android:layout_width="316dp"
+        android:layout_height="213dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+
+
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="77dp" />
+
+
+</RelativeLayout>

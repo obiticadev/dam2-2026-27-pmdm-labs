@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MenuApp</string>
+    <string name="settings">Preferencias</string>
+    <string name="new_file">Nuevo Fichero</string>
+    <string name="find">Buscar</string>
+    <string name="action_one">Acción Uno</string>
+    <string name="action_two">Acción Dos</string>
+    <string name="popup_one">Acción Popup Uno</string>
+    <string name="popup_two">Acción Popup Dos</string>
+</resources>
