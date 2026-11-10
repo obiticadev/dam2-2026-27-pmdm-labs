@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Mi aplicación</string>
+  <string name="welcome">BIENVENIDO</string>
+  <string name="personal_account">CUENTA PERSONAL</string>
+  <string name="username">USUARIO</string>
+  <string name="password">CONTRASEÑA</string>
+  <string name="login">ENTRAR</string>
+  <string name="forgot_password">¿Has olvidado la contraseña?</string>
+  <string name="register">Registrarse</string>
+  <string name="language">Idioma</string>
+  <string name="login_error">Usuario o contraseña incorrectos</string>
+</resources>

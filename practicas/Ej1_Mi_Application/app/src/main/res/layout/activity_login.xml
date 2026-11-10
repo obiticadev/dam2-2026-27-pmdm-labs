@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:text="BIENVENIDO"
+            android:text="@string/welcome"
             android:textSize="23sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="monospace"
-            android:text="CUENTA PERSONAL"
+            android:text="@string/personal_account"
             android:textAlignment="center"
             android:textSize="38sp"
             android:textStyle="bold" />
@@ -71,7 +71,7 @@
             android:id="@+id/tvLabelUser"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
-            android:text="USER" />
+            android:text="@string/username" />
 
         <EditText
             android:id="@+id/etUser"
@@ -98,7 +98,7 @@
             android:id="@+id/tvLabelPassword"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
-            android:text="PASSWORD" />
+            android:text="@string/password" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -125,7 +125,7 @@
             android:id="@+id/btnLogin"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="LOGIN" />
+            android:text="@string/login" />
     </LinearLayout>
 
     <!-- Sección: Enlaces inferiores (Olvidó contraseña / Registrarse) -->
@@ -152,7 +152,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingEnd="8dp"
-                android:text="¿Has olvidado la contraseña?"
+                android:text="@string/forgot_password"
                 android:textAlignment="textEnd" />
         </LinearLayout>
 
@@ -168,9 +168,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="Registrarse"
+                android:text="@string/register"
                 android:textAlignment="center" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/layoutFooterLanguage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="32dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      >
+        <TextView
+          android:gravity="end"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/Language"
+          android:text="@string/language"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,10 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
+import androidx.core.os.LocaleListCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
@@ -68,6 +71,15 @@ public class LoginActivity extends AppCompatActivity {
                 String content = etUser.getText().toString();
                 String content_pass = etPassword.getText().toString();
 
+                if (!content.equals(user_registrado) || !content_pass.equals(pass_registrado)){
+                    Toast.makeText(
+                        LoginActivity.this,
+                        R.string.login_error,
+                        Toast.LENGTH_SHORT
+                    ).show();
+                    return;
+                }
+
                 intent.putExtra("nombre", content);
                 intent.putExtra("pass_registrado", content_pass);
 
@@ -86,5 +98,18 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        TextView language = findViewById(R.id.Language);
+        language.setOnClickListener(v -> {
+            String idiomaActual = getResources()
+                .getConfiguration().getLocales().get(0).getLanguage();
+
+            String nuevoIdioma = idiomaActual.equals("es") ? "en" : "es";
+            AppCompatDelegate.setApplicationLocales(
+                LocaleListCompat.forLanguageTags(nuevoIdioma)
+            );
+        });
+
+
     }
 }

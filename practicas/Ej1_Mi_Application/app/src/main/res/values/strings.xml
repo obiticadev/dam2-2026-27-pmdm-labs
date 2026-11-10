@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Mi_Application</string>
+  <string name="app_name">Mi_Application</string>
+  <string name="welcome">WELCOME</string>
+  <string name="personal_account">PERSONAL ACCOUNT</string>
+  <string name="username">USERNAME</string>
+  <string name="password">PASSWORD</string>
+  <string name="login">LOG IN</string>
+  <string name="forgot_password">Forgot your password?</string>
+  <string name="register">Sign up</string>
+  <string name="language">Language</string>
+  <string name="login_error">Incorrect username or password</string>
 </resources>
