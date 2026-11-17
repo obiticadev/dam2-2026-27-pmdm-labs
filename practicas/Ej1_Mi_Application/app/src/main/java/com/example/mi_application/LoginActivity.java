@@ -1,6 +1,7 @@
 package com.example.mi_application;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private SharedPreferences preferencias;
+    private boolean sesionGuardada;
+
     private String user_registrado;
     private String pass_registrado;
     private String direccion_registrado;
@@ -27,6 +31,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        preferencias = getSharedPreferences("sesion", MODE_PRIVATE);
+        sesionGuardada = preferencias.getBoolean("sesion_iniciada", false);
+
+        if (sesionGuardada) {
+            Intent intent = new Intent(LoginActivity.this, SaludoActivity.class);
+            intent.putExtra("nombre", preferencias.getString("nombre", null));
+            intent.putExtra("contraseña", preferencias.getString("contraseña", null));
+            intent.putExtra("direccion", preferencias.getString("direccion", null));
+            intent.putExtra("telefono", preferencias.getString("telefono", null));
+            intent.putExtra("cp", preferencias.getString("cp", null));
+        }
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -79,6 +94,13 @@ public class LoginActivity extends AppCompatActivity {
                     ).show();
                     return;
                 }
+                sesionGuardada = preferencias.edit().putBoolean("sesion_iniciada", true)
+                    .putString("nombre", content)
+                    .putString("contraseña", content_pass)
+                    .putString("direccion", direccion_registrado)
+                    .putString("telefono", telefono_registrado)
+                    .putString("cp", cp_registrado)
+                    .commit();
 
                 intent.putExtra("nombre", content);
                 intent.putExtra("pass_registrado", content_pass);
